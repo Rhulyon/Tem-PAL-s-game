@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 /*
  Singleton related to global game behaviour*/
@@ -29,8 +30,15 @@ public class GameManager : MonoBehaviour {
     
     public void Start()
     {
-                    mainCamera = Camera.main.transform;
+        mainCamera = Camera.main.transform;
+        SceneManager.sceneLoaded += resetInfo;
     }
+
+    private void resetInfo(Scene arg0, LoadSceneMode arg1)
+    {
+        mainCamera = Camera.main.transform;
+    }
+
     public static GameManager getInstance(){
         return instance;    
     }
@@ -48,6 +56,10 @@ public class GameManager : MonoBehaviour {
         if (Input.GetButtonDown("Swap"))
         {
             CharacterSwapping.SwapCharacter();
+        }
+        if(Input.GetButton("Restart"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
