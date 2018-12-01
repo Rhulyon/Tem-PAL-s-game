@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Dog
-  - Velma
-  - Daphne
-  - Fred
+  - Boulder
   layers:
   - Default
   - TransparentFX
@@ -17,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Ground
+  - Walls
+  - Boulder
   - 
   - 
   - 
