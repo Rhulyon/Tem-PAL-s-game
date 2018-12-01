@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour {
     private Transform cameraFollow;
 
 
-    public float cameraSpeed=0.1f;
-
+    public float cameraSpeed = 2000.0f;
+    public float smoothTime = 0.1f;
     public void Awake()
     {
         if (instance == null)
@@ -43,21 +43,26 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void LateUpdate()
+    public void Update()
     {
-        Vector3 aux;
-        if(cameraFollow!=null){
-            aux= Vector3.Lerp(mainCamera.position, cameraFollow.position, cameraSpeed);
-            aux.z = mainCamera.position.z;
-            mainCamera.position = aux;
+        if (Input.GetButtonDown("Swap"))
+        {
+            CharacterSwapping.SwapCharacter();
         }
     }
 
     public void FixedUpdate()
     {
-        if (Input.GetButtonDown("Swap"))
+
+        Vector3 aux;
+        Vector3 aux2;
+        if (cameraFollow != null)
         {
-            CharacterSwapping.SwapCharacter();
+            aux = cameraFollow.position;
+            aux.z = mainCamera.position.z;
+            aux2 = Vector3.zero;
+            mainCamera.position = Vector3.SmoothDamp(mainCamera.position, aux, ref aux2, 0.1f, cameraSpeed);
+
         }
     }
 
