@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
 
-        rb2D.velocity = new Vector2(h * speed, rb2D.velocity.y);
+        rb2D.velocity = cartesian_to_iso(new Vector2(h * speed, v * speed));
     }
 
     private void Update()
@@ -44,6 +44,14 @@ public class PlayerController : MonoBehaviour {
         CheckGrounded();
         ProcessInteract();
         ProcessJump();
+    }
+
+    private Vector2 cartesian_to_iso(Vector2 cartesian)
+    {
+        Vector2 Isometric = new Vector2();
+        Isometric.x = cartesian.x - cartesian.y;
+        Isometric.y = (cartesian.x + cartesian.y) / 2;
+        return Isometric;
     }
 
     private void ProcessInteract()
@@ -82,6 +90,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    //i dont think we need to jump on our game
     private void ProcessJump()
     {
 
