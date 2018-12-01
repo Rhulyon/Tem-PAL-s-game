@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4285755664085670}
   - component: {fileID: 114670791698136594}
-  - component: {fileID: 61139958166373526}
   - component: {fileID: 212409325461289108}
   - component: {fileID: 50443469549169980}
+  - component: {fileID: 61909256689921658}
   - component: {fileID: 114208948097250412}
   m_Layer: 0
   m_Name: TestCharacter
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981488545428318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.8398861, y: -0.7798996, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,7 +64,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61139958166373526
+--- !u!61 &61909256689921658
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
 --- !u!114 &114208948097250412
 MonoBehaviour:
@@ -117,7 +117,7 @@ MonoBehaviour:
   maxJumpTime: 1.5
   groundLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!212 &212409325461289108
 SpriteRenderer:
   m_ObjectHideFlags: 1
