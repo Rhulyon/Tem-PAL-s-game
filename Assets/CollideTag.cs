@@ -6,6 +6,12 @@ public class CollideTag : MonoBehaviour
 {
     public string LetGo;
 
+    private Collider2D c;
+
+    private void Awake()
+    {
+        c = this.GetComponent<BoxCollider2D>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +26,31 @@ public class CollideTag : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == LetGo)
+        if (collision.gameObject.CompareTag(LetGo))
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            c.isTrigger = true;
+            
         }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.gameObject.CompareTag(LetGo))
+            c.isTrigger = false;
+
+
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        c.isTrigger = false;
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 
 }
