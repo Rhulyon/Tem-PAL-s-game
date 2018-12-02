@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     private Collider2D[] colliders = null;
 
     private Rigidbody2D rb2D = null;
-    private BoxCollider2D boxCollider = null;
+    private PolygonCollider2D boxCollider = null;
 
     [SerializeField]
     private float speed = 5.0f;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<PolygonCollider2D>();
     }
 
     private void FixedUpdate()
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 
     private void ProcessInteract()
     {
-        colliders = Physics2D.OverlapCircleAll(transform.position, boxCollider.size.x / 2 + 0.025f);
+        colliders = Physics2D.OverlapCircleAll(transform.position, boxCollider.points[0].x / 2 + 0.025f);
 
         foreach (Collider2D collider in colliders)
         {
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour {
 
     private void CheckGrounded()
     {
-        groundHits = Physics2D.RaycastAll(transform.position, Vector2.down, boxCollider.size.y / 2 + 0.05f, groundLayers);
+        groundHits = Physics2D.RaycastAll(transform.position, Vector2.down, boxCollider.points[0].y / 2 + 0.05f, groundLayers);
 
         if (groundHits.Length != 0)
         {
