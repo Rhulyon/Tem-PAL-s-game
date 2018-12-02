@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4285755664085670}
   - component: {fileID: 212409325461289108}
   - component: {fileID: 50443469549169980}
-  - component: {fileID: 61909256689921658}
   - component: {fileID: 4097811559242438680}
-  - component: {fileID: 688436597749311157}
+  - component: {fileID: 6777145576667450540}
   m_Layer: 11
   m_Name: Velma
   m_TagString: Velma
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1981488545428318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.8398861, y: -0.7798996, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300002, guid: 94eb01b5bbf39c04e9aaac35c11ca852, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,8 +103,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61909256689921658
-BoxCollider2D:
+--- !u!114 &4097811559242438680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981488545428318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbce8976b5c2a4f4998626482958c33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 5
+  maxJumpTime: 1.5
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!60 &6777145576667450540
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,40 +136,21 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
---- !u!114 &4097811559242438680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981488545428318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769af5cc88b50dc47b2840e0fb062c02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
---- !u!114 &688436597749311157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981488545428318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb421f44178ea544f93e34ea54eec3aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startCharacter: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.28125, y: 0.296875}
+      - {x: 0.03125, y: 0.40625}
+      - {x: -0.09375, y: 0.40625}
+      - {x: -0.28125, y: 0.296875}
+      - {x: -0.28125, y: -0.296875}
+      - {x: -0.03125, y: -0.40625}
+      - {x: 0.09375, y: -0.40625}
+      - {x: 0.28125, y: -0.28125}

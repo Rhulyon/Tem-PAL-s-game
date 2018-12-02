@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 1981488545428318}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a8d3304f60f479947aa13806d8c62957, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -164,10 +164,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981488545428318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d78abee146b6f543b87dec70107a845, type: 3}
+  m_Script: {fileID: 11500000, guid: dbce8976b5c2a4f4998626482958c33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
+  jumpForce: 5
+  maxJumpTime: 1.5
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &2056589811855309070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981488545428318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb421f44178ea544f93e34ea54eec3aa, type: 3}
+  m_Script: {fileID: 11500000, guid: e9b9f89217df289458f37b90c7999bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCharacter: 0
+  speed: 2

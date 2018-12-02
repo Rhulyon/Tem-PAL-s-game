@@ -171,10 +171,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981488545428318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a17fd1a47e507a499eed6e2e9438308, type: 3}
+  m_Script: {fileID: 11500000, guid: dbce8976b5c2a4f4998626482958c33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
+  jumpForce: 5
+  maxJumpTime: 1.5
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6328565416890199099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981488545428318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb421f44178ea544f93e34ea54eec3aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1040a91d83478bf4eb5438eae489fb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCharacter: 0
+  speed: 2
