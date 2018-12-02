@@ -9,6 +9,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     private static GameManager instance;
     private Transform mainCamera;
+    private GameObject pauseMenu;
+
+    public void SetPauseMenu(GameObject gameObject)
+    {
+        pauseMenu = gameObject;    
+    }
+
     private Transform cameraFollow;
     private int nextLevel;
     private bool endingLevel;
@@ -91,6 +98,10 @@ public class GameManager : MonoBehaviour {
         if(Input.GetButton("Restart"))
         {
             Restart();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
         }
     }
 
