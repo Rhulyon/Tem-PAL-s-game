@@ -8,28 +8,41 @@ public class FreddController1 : IsometricController {
 
     private Boulder currentBoulder = null;
 
+    private float fredHeight;
+    private float boulderHeight;
 
+    public  void Awake()
+    {
+        Sprite auxS;
+        auxS = this.GetComponent<SpriteRenderer>().sprite;
+        fredHeight = auxS.textureRect.height/auxS.pixelsPerUnit;
+
+    }
 
     protected override void DetectInteraction()
     {
+        Sprite auxS;
         if (isHoldingBoulder)
         {
             Vector3 aux=Vector3.zero;
+            
+            auxS = currentBoulder.GetComponent<SpriteRenderer>().sprite;
+            boulderHeight = auxS.textureRect.height / auxS.pixelsPerUnit;
             switch (faceDir)
                 {
                     
                     case PlayerFaceDirection.Front:
-                        aux = CarToIso(Vector3.up * (transform.localScale.y / 2 + currentBoulder.transform.localScale.y / 2));
+                        aux = CarToIso(Vector3.up * (transform.localScale.y*fredHeight  + currentBoulder.transform.localScale.y*boulderHeight) / 2);
 
                         break;
                     case PlayerFaceDirection.Back:
-                         aux = CarToIso(Vector3.down * (transform.localScale.y / 2 + currentBoulder.transform.localScale.y / 2));
+                         aux = CarToIso(Vector3.down * (transform.localScale.y *fredHeight + currentBoulder.transform.localScale.y* boulderHeight) / 2);
                         break;
                     case PlayerFaceDirection.Left:
-                         aux = CarToIso(Vector3.left * (transform.localScale.y / 2 + currentBoulder.transform.localScale.y / 2));
+                         aux = CarToIso(Vector3.left * (transform.localScale.y * fredHeight + currentBoulder.transform.localScale.y * boulderHeight) / 2);
                         break;
                     case PlayerFaceDirection.Right:
-                         aux = CarToIso(Vector3.right * (transform.localScale.y / 2 + currentBoulder.transform.localScale.y / 2));
+                         aux = CarToIso(Vector3.right * (transform.localScale.y * fredHeight + currentBoulder.transform.localScale.y * boulderHeight) / 2);
                         break;
                 }
                 currentBoulder.transform.position = transform.position + aux;
@@ -51,7 +64,7 @@ public class FreddController1 : IsometricController {
             switch (collider.tag)
             {
                 case "Boulder":
-                    Debug.Log("boulder");
+                    //Debug.Log("boulder");
                     Boulder boulder = collider.GetComponent<Boulder>();
                     if (boulder != null)
                     {
@@ -60,9 +73,10 @@ public class FreddController1 : IsometricController {
                             currentBoulder = boulder;
 
                             isHoldingBoulder = true;
-
+                            auxS = currentBoulder.GetComponent<SpriteRenderer>().sprite;
+                            boulderHeight = auxS.textureRect.height / auxS.pixelsPerUnit;
                             boulder.IsPushed = true;
-                            boulder.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2 + boulder.transform.localScale.y / 2);
+                            boulder.transform.position = transform.position + Vector3.up *( transform.localScale.y * fredHeight + currentBoulder.transform.localScale.y * boulderHeight) / 2;
                             boulder.GetComponent<FixedJoint2D>().enabled = true;
                             boulder.GetComponent<FixedJoint2D>().connectedBody = rb2D;
                         }

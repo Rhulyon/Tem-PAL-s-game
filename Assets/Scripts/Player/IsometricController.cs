@@ -65,6 +65,7 @@ public abstract class IsometricController : MonoBehaviour {
     {
 
         Vector2 moveVector = new Vector2(h, v);
+        if(moveVector.SqrMagnitude() > 0.01 )
         if (moveVector.y * moveVector.y >= moveVector.x * moveVector.x)
         {
             if (moveVector.y < 0)
