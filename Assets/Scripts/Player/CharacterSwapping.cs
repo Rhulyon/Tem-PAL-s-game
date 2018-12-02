@@ -58,7 +58,8 @@ public class CharacterSwapping : MonoBehaviour {
     /*If this character is active we remove it and put another one in the spotlight*/
     private void OnDisable()
     {
-        if(this.gameObject==_activeCharacter)
+
+        if(this==_activeCharacter)
         {
             if (characters.Count <= 1)
             {
@@ -92,6 +93,26 @@ public class CharacterSwapping : MonoBehaviour {
             characterSwapped();
 
     }
-    
+
+    public static int GetRemaingCharacters()
+    {
+        return characters.Count;
+    }
+
+
+    public void OnDestroy()
+    {
+
+            if (EndLevelZone.numberOfCharacters >= characters.Count)
+            {
+                GameManager.getInstance().EndLevel();
+            }
+            if (characters.Count == 0)
+            {
+            
+                GameManager.getInstance().Restart();
+            }
+        
+    }
 
 }

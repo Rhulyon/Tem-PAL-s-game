@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreddController : IsometricController {
+public class FreddController1 : IsometricController {
 
     private bool isHoldingBoulder = false;
 

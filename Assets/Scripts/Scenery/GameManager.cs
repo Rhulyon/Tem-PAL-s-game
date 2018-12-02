@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour {
     private static GameManager instance;
     private Transform mainCamera;
     private Transform cameraFollow;
+    private int nextLevel;
+    private bool endingLevel;
 
+    public int firstLevel=0;
 
     public float cameraSpeed = 2000.0f;
     public float smoothTime = 0.1f;
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour {
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            endingLevel = false;
         }
         else
         {
@@ -27,7 +31,33 @@ public class GameManager : MonoBehaviour {
 
         }
     }
-    
+
+    internal void EndLevel()
+    {
+        
+        int sNumber=SceneManager.sceneCount;
+        if (endingLevel)
+            return;
+        endingLevel = true;
+        if ((nextLevel=SceneManager.GetActiveScene().buildIndex+1) >= sNumber)
+        {
+            nextLevel = 0;
+            UIMessageSystem.Message("Congratulations you winned the game\nYou Are Awesome\n (press any key to restart)");
+        }
+        else
+        {
+            UIMessageSystem.Message("Congratulations you finnished the level\nYou Are Awesome\n (press any key to continue)");
+        }
+        StartCoroutine(ChangeLevelDelayed());
+    }
+
+    private IEnumerator ChangeLevelDelayed()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene(nextLevel);
+        yield return null;
+    }
+
     public void Start()
     {
         mainCamera = Camera.main.transform;
@@ -37,6 +67,7 @@ public class GameManager : MonoBehaviour {
     private void resetInfo(Scene arg0, LoadSceneMode arg1)
     {
         mainCamera = Camera.main.transform;
+        endingLevel = false;
     }
 
     public static GameManager getInstance(){
@@ -59,7 +90,7 @@ public class GameManager : MonoBehaviour {
         }
         if(Input.GetButton("Restart"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Restart();
         }
     }
 
@@ -87,4 +118,15 @@ public class GameManager : MonoBehaviour {
         else
         cameraFollow=followObj.transform;
     }
+
+    public void Restart()
+    {
+        if (endingLevel)
+            return;
+        endingLevel = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+    
 }
