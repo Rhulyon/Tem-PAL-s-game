@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(IsometricController))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterSwapping : MonoBehaviour {
     /*private vars*/
+    private const float BUNCHOFDRAG = 10000;
     private static List<CharacterSwapping> characters = new List<CharacterSwapping>();
     private static CharacterSwapping _activeCharacter;
     private IsometricController playerController;
@@ -39,8 +40,10 @@ public class CharacterSwapping : MonoBehaviour {
         playerController=this.GetComponent<IsometricController>();
         playerController.enabled = false;
         rb.velocity = Vector3.zero;
+        rb.drag = BUNCHOFDRAG;
         if (_activeCharacter == null && startCharacter)
         {
+            rb.drag = 0;
             playerController.enabled = true;
             _activeCharacter = this;
             GameManager.getInstance().CameraFollowObject(activeCharacter);
@@ -79,8 +82,10 @@ public class CharacterSwapping : MonoBehaviour {
             index = characters.IndexOf(_activeCharacter);
             _activeCharacter.playerController.enabled = false;
             _activeCharacter.rb.velocity = Vector3.zero;
+            _activeCharacter.rb.drag = BUNCHOFDRAG;
             _activeCharacter = characters[(index+1) % characters.Count];
             _activeCharacter.playerController.enabled = true;
+            _activeCharacter.rb.drag = 0;
         }
         GameManager.getInstance().CameraFollowObject(activeCharacter);
         if (characterSwapped != null)

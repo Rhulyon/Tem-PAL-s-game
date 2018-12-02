@@ -6,6 +6,7 @@ public enum PlayerFaceDirection { Front, Back, Left, Right }
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
+
 public abstract class IsometricController : MonoBehaviour {
     private float h, v = 0.0f;
 
@@ -17,7 +18,7 @@ public abstract class IsometricController : MonoBehaviour {
     protected PlayerFaceDirection faceDir = PlayerFaceDirection.Front;
 
     [SerializeField]
-    private float speed = 0.15f;
+    private float speed = 2f;
 
     void Start()
     {
@@ -29,9 +30,10 @@ public abstract class IsometricController : MonoBehaviour {
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(faceDir.ToString());
-
-        DetectInteraction();
+        //Debug.Log(faceDir.ToString());
+        if (Input.GetKeyDown(KeyCode.E)){
+            DetectInteraction();
+        }
         Move();
 	}
 
@@ -61,19 +63,33 @@ public abstract class IsometricController : MonoBehaviour {
 
     protected virtual void Move()
     {
+
         Vector2 moveVector = new Vector2(h, v);
-
-        if (moveVector == Vector2.up)
-            faceDir = PlayerFaceDirection.Front;
-        else if (moveVector == Vector2.down)
-            faceDir = PlayerFaceDirection.Back;
-        else if (moveVector == Vector2.left)
-            faceDir = PlayerFaceDirection.Left;
-        else if (moveVector == Vector2.right)
-            faceDir = PlayerFaceDirection.Right;
-
-        moveVector = moveVector.normalized * speed;
-
+        if (moveVector.y * moveVector.y >= moveVector.x * moveVector.x)
+        {
+            if (moveVector.y < 0)
+                faceDir = PlayerFaceDirection.Back;
+            else
+                faceDir = PlayerFaceDirection.Front;
+        }
+        else
+        {
+            if (moveVector.x < 0)
+                faceDir = PlayerFaceDirection.Left;
+            else
+                faceDir = PlayerFaceDirection.Right;
+        }
+        moveVector = CarToIso(moveVector.normalized)*speed;
+        
         rb2D.velocity = moveVector;
+
+    }
+
+    public static Vector2 CarToIso(Vector2 cartesianCoord)
+    {
+        Vector2 ret = new Vector2();
+        ret.x = cartesianCoord.x - cartesianCoord.y;
+        ret.y = (cartesianCoord.x + cartesianCoord.y )/ 2;
+        return ret;
     }
 }

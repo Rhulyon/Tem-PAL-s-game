@@ -10,14 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4285755664085670}
   - component: {fileID: 6237519507694562696}
-  - component: {fileID: 114670791698136594}
   - component: {fileID: 212409325461289108}
   - component: {fileID: 50443469549169980}
   - component: {fileID: 61909256689921658}
   - component: {fileID: 6743735786463692812}
   m_Layer: 0
-  m_Name: TestCharacter
-  m_TagString: Untagged
+  m_Name: Fred
+  m_TagString: Fred
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,25 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c86e73d49ea114d8cb1aa30a1df6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
---- !u!114 &114670791698136594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981488545428318}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbce8976b5c2a4f4998626482958c33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 5
-  maxJumpTime: 1.5
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
+  speed: 2
 --- !u!212 &212409325461289108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,19 +104,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981488545428318}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 1000000
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61909256689921658
 BoxCollider2D:
   m_ObjectHideFlags: 0
