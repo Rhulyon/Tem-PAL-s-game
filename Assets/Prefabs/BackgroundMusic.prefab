@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6531672812349095316}
   - component: {fileID: 6531672812349095315}
   - component: {fileID: 6531672812349095314}
-  - component: {fileID: 102958684}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -143,17 +142,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introAudio: {fileID: 8300000, guid: d1d74c4ca2bff4649894223543827fa3, type: 3}
   loopAudio: {fileID: 8300000, guid: a5d22ab04896596429fac00d1d84d668, type: 3}
---- !u!114 &102958684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6531672812349095313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7254e65da3e5c49449c67e05552b435f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPitch: 2
-  minPitch: 0.1

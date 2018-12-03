@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boulder
+  - Dog
+  - Velma
+  - Daphne
+  - Fred
+  - backgroundMusic
   layers:
   - Default
   - TransparentFX
