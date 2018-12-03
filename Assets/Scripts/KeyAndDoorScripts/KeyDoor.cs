@@ -8,6 +8,9 @@ using UnityEngine;
 public class KeyDoor : MonoBehaviour {
 
     public delegate void OnActived(bool active);
+
+
+
     public bool startActivated = false;
 
     public List<KeyDoor> activateOnActivate;
@@ -39,6 +42,9 @@ public class KeyDoor : MonoBehaviour {
     {
         _activated = startActivated;
         ActivateSons();
+        if(activateEvent!=null)
+            activateEvent(_activated);
+
     }
 
     private void ActivateSons()
