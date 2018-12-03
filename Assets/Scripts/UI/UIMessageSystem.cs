@@ -17,7 +17,6 @@ public class UIMessageSystem : MonoBehaviour
     {
         if (Input.anyKeyDown&&safeTimer<=0)
         {
-            Debug.Log("keyPressed");
             Time.timeScale=1;
             this.gameObject.SetActive(false);
         }
