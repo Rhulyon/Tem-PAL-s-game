@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class hole : MonoBehaviour
 {
-    public virtual void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         IsometricController ic = other.GetComponent<IsometricController>();
         Destroy(ic.gameObject);
