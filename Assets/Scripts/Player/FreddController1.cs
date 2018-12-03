@@ -20,11 +20,13 @@ public class FreddController1 : IsometricController {
 
     }
 
-    protected override void DetectInteraction()
+    protected override bool DetectInteraction()
     {
+        bool ret=false;
         Sprite auxS;
         if (isHoldingBoulder)
         {
+            ret = true;
             Vector3 aux=Vector3.zero;
             
             auxS = currentBoulder.GetComponent<SpriteRenderer>().sprite;
@@ -56,7 +58,7 @@ public class FreddController1 : IsometricController {
                 isHoldingBoulder = false;
 
                 //Debug.Log(faceDir + " from fredd");
-            return;
+            return ret;
         }
         colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.y / 2 + 0.025f);
 
@@ -65,6 +67,7 @@ public class FreddController1 : IsometricController {
             switch (collider.tag)
             {
                 case "Boulder":
+                    ret = true;
                     //Debug.Log("boulder");
                     Boulder boulder = collider.GetComponent<Boulder>();
                     if (boulder != null)
@@ -84,6 +87,7 @@ public class FreddController1 : IsometricController {
                     }
                     break;
                 case "Lever":
+                    ret = true;
                     Lever lever = collider.GetComponent<Lever>();
 
                     if (lever != null)
@@ -94,5 +98,6 @@ public class FreddController1 : IsometricController {
                     break;
             }
         }
+        return ret;
     }
 }

@@ -40,6 +40,7 @@ public class MenuButtons : MonoBehaviour
     {
         Time.timeScale = 0;
         creditsTab.SetActive(false);
+        backgroundMusic.GetComponent<SoundPlayOnceAndLoop>().PauseMusic();
 
     }
 
@@ -47,6 +48,6 @@ public class MenuButtons : MonoBehaviour
     {
         Time.timeScale = 1;
         creditsTab.SetActive(false);
-
+        backgroundMusic.GetComponent<SoundPlayOnceAndLoop>().ResumeMusic();
     }
 }

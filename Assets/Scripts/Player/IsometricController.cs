@@ -10,6 +10,7 @@ public enum PlayerFaceDirection { Front, Back, Left, Right }
 public abstract class IsometricController : MonoBehaviour {
     private float h, v = 0.0f;
 
+    
     protected Animator animator;
     protected BoxCollider2D boxCollider = null;
     protected Rigidbody2D rb2D = null;
@@ -21,6 +22,8 @@ public abstract class IsometricController : MonoBehaviour {
     [SerializeField]
     private float speed = 2f;
 
+    public AudioClip useClip;
+    public GameObject audioPrefab;
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
@@ -34,17 +37,26 @@ public abstract class IsometricController : MonoBehaviour {
 
         //Debug.Log(faceDir.ToString());
         if (Input.GetKeyDown(KeyCode.E)){
-            DetectInteraction();
+            if (DetectInteraction() && useClip != null) {
+                GameObject audio = Instantiate(audioPrefab);
+                AudioSource aux;
+                aux = audio.GetComponent<AudioSource>();
+                aux.clip = useClip;
+                aux.Play();
+                Destroy(audio, 1f);
+            }
+                
+            ;
         }
         Move();
         animator.SetInteger("Facing",(int)faceDir);
         animator.SetFloat("Speed", rb2D.velocity.sqrMagnitude);
 	}
 
-    protected virtual void DetectInteraction()
+    protected virtual bool DetectInteraction()
     {
         colliders = Physics2D.OverlapCircleAll(transform.position, boxCollider.size.x / 2 + 0.05f);
-
+        bool ret = false;
         foreach(Collider2D collider in colliders)
         {
             switch (collider.tag)
@@ -57,12 +69,15 @@ public abstract class IsometricController : MonoBehaviour {
                         if (Input.GetKeyDown(KeyCode.E))
                         {
                             lever.PullLever();
+                            ret= true;
                         }
                     }
 
                     break;
             }
         }
+        return ret;
+
     }
 
     protected virtual void Move()

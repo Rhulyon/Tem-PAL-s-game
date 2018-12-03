@@ -10,7 +10,7 @@ public class DangerousTerrain : MonoBehaviour
         IsometricController ic= other.GetComponent<IsometricController>();
         if (ic != null&& ic as DapneController ==null)
         {
-            Destroy(ic.gameObject);
+            other.GetComponent<CharacterSwapping>().Kill() ;
         }
     }
 }

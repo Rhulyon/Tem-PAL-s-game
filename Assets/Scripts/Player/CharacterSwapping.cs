@@ -12,11 +12,12 @@ public class CharacterSwapping : MonoBehaviour {
     private IsometricController playerController;
     private Rigidbody2D rb;
     private Animator animator;
-
+    private AudioSource aS;
     /*public vars*/
     public bool startCharacter;
 
-
+    public AudioClip walkSound;
+    public AudioClip dieSound;
     
     public static GameObject activeCharacter
     {
@@ -37,6 +38,7 @@ public class CharacterSwapping : MonoBehaviour {
      * We create the first character that has startCharacter active as the mainOne
      */
     void Awake () {
+        aS = this.GetComponent<AudioSource>();
         rb = this.GetComponent<Rigidbody2D>();
         playerController=this.GetComponent<IsometricController>();
         playerController.enabled = false;
@@ -102,7 +104,25 @@ public class CharacterSwapping : MonoBehaviour {
         return characters.Count;
     }
 
+    public void FixedUpdate()
+    {
+        if (rb.velocity.sqrMagnitude > 0.01 && !aS.isPlaying)
+        {
+            aS.clip = walkSound;
+            aS.Play();
+            aS.loop = false;
+        }
+    }
 
+    public void Kill()
+    {
+        aS.clip=dieSound;
+        aS.loop = false;
+        aS.Play();
+        playerController.enabled = false;
+        rb.velocity = Vector2.zero;
+        Destroy(this.gameObject, 1f);
+    }
     public void OnDestroy()
     {
 

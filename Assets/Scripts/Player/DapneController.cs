@@ -6,14 +6,17 @@ public class DapneController : IsometricController {
 
 
     private Trap trap;
-    protected override void DetectInteraction()
+    protected override bool DetectInteraction()
     {
+        bool ret=
         base.DetectInteraction();
         if (trap != null)
         {
             trap.GetComponent<Collider2D>().enabled = false;
             trap = null;
+            ret = true;
         }
+        return ret;
      
     }
 

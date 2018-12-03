@@ -8,34 +8,48 @@ public class DogController : IsometricController {
     private DigZone dz;
     private GameObject nearBone;
     private GameObject myBone;
-
-    public void Update()
+    private Vector3 offset;
+    public void Start()
+    {
+        Sprite aux;
+        offset= Vector3.zero;
+        aux = this.GetComponent<SpriteRenderer>().sprite;
+        offset.y = aux.textureRect.height / aux.pixelsPerUnit * this.transform.localScale.y/2;
+    }
+    protected override void Update()
     {
         base.Update();
         if (myBone)
         {
-            myBone.transform.position = this.transform.position;
+            myBone.transform.position = this.transform.position+offset;
         }
     }
 
-    protected override void DetectInteraction()
+    protected override bool DetectInteraction()
     {
-        base.DetectInteraction();
+        bool ret = false;
+        ret= base.DetectInteraction();
         if (myBone)
         {
+            myBone.transform.position -= offset;
             myBone = null;
+            ret = true;
+            
         }
         else
         {
             if (nearBone)
             {
                 myBone = nearBone;
+                ret = true;
             }
             if (dz)
             {
                 dz.Dig();
+                ret = true;
             }
         }
+        return ret;
         /*colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.y / 2 + 0.025f,);
 
         foreach (Collider2D collider in colliders)
