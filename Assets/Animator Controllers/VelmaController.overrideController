@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VelmaController
+  m_Controller: {fileID: 9100000, guid: a10d143b4a32c3245a980ce3fe02ce6d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2bf3fe142b84fda4781e457c0b9a31b3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 57e17aed5066f0943a47253f47fb89ca, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ab84e62c92058034786a219d5b701948, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8eca9ed0b88c36146b47e6054fe57747, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c31d23c9c8f3b7c4a95b8803beaf1065, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 94e9055793ae50b47a1ab69a8f9507aa, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5b89ffd00d3605645a44ff0788aa56e3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ee9b2a461df441047881826ce034a76f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: eaac8d74d5155e94e814267e52dd825c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 35fd177dd0c6e614a9f82774ff8dcda9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fc8f3097e6cd59f45863c6c86dfad1d0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c6c78bc81771ca64aacc0cce0ab45355, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 88ab8be2788c83b4294702cdfa8e36e1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2dd2dfbc9af1a8b47b3f75bee0863a6c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 81d238cf0befe014687e6d0fc64285a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e7dde46ac914f62488a0af0b4530a9d8, type: 2}

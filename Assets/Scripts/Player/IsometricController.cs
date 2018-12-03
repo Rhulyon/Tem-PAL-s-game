@@ -10,18 +10,20 @@ public enum PlayerFaceDirection { Front, Back, Left, Right }
 public abstract class IsometricController : MonoBehaviour {
     private float h, v = 0.0f;
 
+    protected Animator animator;
     protected BoxCollider2D boxCollider = null;
     protected Rigidbody2D rb2D = null;
 
     protected Collider2D[] colliders = null;
 
-    protected PlayerFaceDirection faceDir = PlayerFaceDirection.Front;
+    protected PlayerFaceDirection faceDir = PlayerFaceDirection.Back;
 
     [SerializeField]
     private float speed = 2f;
 
-    void Start()
+    protected virtual void Awake()
     {
+        animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         rb2D = GetComponent<Rigidbody2D>();
     }
@@ -35,6 +37,8 @@ public abstract class IsometricController : MonoBehaviour {
             DetectInteraction();
         }
         Move();
+        animator.SetInteger("Facing",(int)faceDir);
+        animator.SetFloat("Speed", rb2D.velocity.sqrMagnitude);
 	}
 
     protected virtual void DetectInteraction()

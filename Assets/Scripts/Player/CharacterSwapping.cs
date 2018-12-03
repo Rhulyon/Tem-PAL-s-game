@@ -11,6 +11,7 @@ public class CharacterSwapping : MonoBehaviour {
     private static CharacterSwapping _activeCharacter;
     private IsometricController playerController;
     private Rigidbody2D rb;
+    private Animator animator;
 
     /*public vars*/
     public bool startCharacter;
@@ -41,6 +42,7 @@ public class CharacterSwapping : MonoBehaviour {
         playerController.enabled = false;
         rb.velocity = Vector3.zero;
         rb.drag = BUNCHOFDRAG;
+        animator = GetComponent<Animator>();
         if (_activeCharacter == null && startCharacter)
         {
             rb.drag = 0;
@@ -83,6 +85,7 @@ public class CharacterSwapping : MonoBehaviour {
             index = characters.IndexOf(_activeCharacter);
             _activeCharacter.playerController.enabled = false;
             _activeCharacter.rb.velocity = Vector3.zero;
+            _activeCharacter.animator.SetFloat("Speed", 0);
             _activeCharacter.rb.drag = BUNCHOFDRAG;
             _activeCharacter = characters[(index+1) % characters.Count];
             _activeCharacter.playerController.enabled = true;

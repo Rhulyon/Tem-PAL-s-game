@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DogController
+  m_Controller: {fileID: 9100000, guid: a10d143b4a32c3245a980ce3fe02ce6d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2bf3fe142b84fda4781e457c0b9a31b3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c39649e057fc57d418e0640735222514, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ab84e62c92058034786a219d5b701948, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 38e7eaea9378dd74480cadf665967989, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c31d23c9c8f3b7c4a95b8803beaf1065, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e098b48bd6808274b83570c3cc00a45b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fc8f3097e6cd59f45863c6c86dfad1d0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0e0be5f44657b8645a063573b2775fc3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5b89ffd00d3605645a44ff0788aa56e3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b52266ba9c9d7064e9a37170c03c97d9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 88ab8be2788c83b4294702cdfa8e36e1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 217946e8286a8f34eb42e3e4a6b10af2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: eaac8d74d5155e94e814267e52dd825c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 42f5cb09bceb8e04c8e16619033af397, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 81d238cf0befe014687e6d0fc64285a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dd1dfb21c11b7dd478db363bbb34f12b, type: 2}

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 212409325461289108}
   - component: {fileID: 3620814220425967636}
   - component: {fileID: 50443469549169980}
-  - component: {fileID: 7708097078767519141}
   - component: {fileID: 622171626207812210}
   - component: {fileID: 6328565416890199099}
+  - component: {fileID: 2730183711498918379}
+  - component: {fileID: 7708097078767519141}
   m_Layer: 11
   m_Name: Dog
   m_TagString: Dog
@@ -94,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1981488545428318}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c94947cbe8e73741bd1809cca3bba80, type: 2}
+  m_Controller: {fileID: 22100000, guid: e446c021219807f41898b5c328acb6c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -124,6 +125,58 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &622171626207812210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981488545428318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1040a91d83478bf4eb5438eae489fb1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+--- !u!114 &6328565416890199099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981488545428318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae3b6348ac0407488672d97e1261a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCharacter: 1
+--- !u!61 &2730183711498918379
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981488545428318}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000014901161, y: -0.18724194}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.42235115, y: 0.13108598}
+  m_EdgeRadius: 0
 --- !u!60 &7708097078767519141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +184,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981488545428318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -162,34 +215,3 @@ PolygonCollider2D:
       - {x: 0.06, y: -0.19}
       - {x: 0.21, y: -0.21}
       - {x: 0.24, y: -0.16}
---- !u!114 &622171626207812210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981488545428318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbce8976b5c2a4f4998626482958c33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 5
-  maxJumpTime: 1.5
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &6328565416890199099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981488545428318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1040a91d83478bf4eb5438eae489fb1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2

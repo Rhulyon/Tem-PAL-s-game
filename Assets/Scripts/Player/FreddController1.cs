@@ -11,8 +11,9 @@ public class FreddController1 : IsometricController {
     private float fredHeight;
     private float boulderHeight;
 
-    public  void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Sprite auxS;
         auxS = this.GetComponent<SpriteRenderer>().sprite;
         fredHeight = auxS.textureRect.height/auxS.pixelsPerUnit;

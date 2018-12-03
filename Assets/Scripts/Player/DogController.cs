@@ -20,7 +20,7 @@ public class DogController : IsometricController {
 
     protected override void DetectInteraction()
     {
-
+        base.DetectInteraction();
         if (myBone)
         {
             myBone = null;

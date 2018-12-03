@@ -51,7 +51,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.35714692, y: -3.0036948}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -62,7 +62,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7142936, y: 0.85347795}
   m_EdgeRadius: 0
 --- !u!212 &8817306711495945294
 SpriteRenderer:
@@ -231,34 +231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 67598fe7ffeade844894f157f8a3d036,
         type: 3}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: hiddenObject
-      value: 
-      objectReference: {fileID: 644474200412258464, guid: 1470e2710ff964f42a9453bd906bd5b3,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046, type: 3}
-    - {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4327787d2940f3a428d5068d76813046, type: 3}
 --- !u!4 &8694975896027188653 stripped
 Transform:
@@ -345,34 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 67598fe7ffeade844894f157f8a3d036,
         type: 3}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: hiddenObject
-      value: 
-      objectReference: {fileID: 644474200412258464, guid: 1470e2710ff964f42a9453bd906bd5b3,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046, type: 3}
-    - {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4327787d2940f3a428d5068d76813046, type: 3}
 --- !u!4 &8694975896117009080 stripped
 Transform:
@@ -459,34 +413,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 67598fe7ffeade844894f157f8a3d036,
         type: 3}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: hiddenObject
-      value: 
-      objectReference: {fileID: 644474200412258464, guid: 1470e2710ff964f42a9453bd906bd5b3,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046, type: 3}
-    - {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4327787d2940f3a428d5068d76813046, type: 3}
 --- !u!4 &8694975894744353640 stripped
 Transform:
@@ -573,34 +504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636427, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 67598fe7ffeade844894f157f8a3d036,
         type: 3}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046,
-        type: 3}
-      propertyPath: hiddenObject
-      value: 
-      objectReference: {fileID: 644474200412258464, guid: 1470e2710ff964f42a9453bd906bd5b3,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 5568466549520636426, guid: 4327787d2940f3a428d5068d76813046, type: 3}
-    - {fileID: 7243286295378720391, guid: 4327787d2940f3a428d5068d76813046, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4327787d2940f3a428d5068d76813046, type: 3}
 --- !u!4 &8694975894999680612 stripped
 Transform:
